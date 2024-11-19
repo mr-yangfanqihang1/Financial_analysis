@@ -1,94 +1,65 @@
 <template>
-  <div class="merchant-recommendation">
-    <h2>商家推荐</h2>
-    <div class="merchant-cards">
-      <div v-for="merchant in merchants" :key="merchant.id" class="merchant-card">
-        <div class="merchant-card-content">
-          <img :src="merchant.image" alt="Merchant Image" class="merchant-image" />
-          <h3>{{ merchant.name }}</h3>
-          <p>{{ merchant.description }}</p>
-          <button @click="goToMerchant(merchant.link)">查看详情</button>
-        </div>
-      </div>
+  <div class="layout">
+    <!-- 左边灰色区域 -->
+    <div class="sidebar">
+      <h2>侧边栏</h2>
+      <ul>
+        <li>菜单项 1</li>
+        <li>菜单项 2</li>
+        <li>菜单项 3</li>
+        <li>菜单项 4</li>
+      </ul>
+    </div>
+    <!-- 右边白色内容区域 -->
+    <div class="content">
+      <h1>内容区域</h1>
+      <p>这是内容区域，可以根据需要添加内容。</p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'MerchantRecommendation',
-  data() {
-    return {
-      merchants: [
-        {
-          id: 1,
-          name: '商家A',
-          description: '高质量产品，优质服务',
-          image: 'https://example.com/merchant-a.jpg',
-          link: 'https://example.com/merchant-a'
-        },
-        {
-          id: 2,
-          name: '商家B',
-          description: '经济实惠，值得信赖',
-          image: 'https://example.com/merchant-b.jpg',
-          link: 'https://example.com/merchant-b'
-        },
-        // 其他商家信息
-      ]
-    };
-  },
-  methods: {
-    goToMerchant(link) {
-      window.location.href = link;
-    }
-  }
-};
+  name: 'LayoutView'
+}
 </script>
 
 <style scoped>
-.merchant-recommendation {
-  padding: 20px;
-}
-
-.merchant-cards {
+/* 设置整体布局 */
+.layout {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  height: 100vh;
+  margin: 0;
 }
 
-.merchant-card {
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 16px;
-  width: 200px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.merchant-card:hover {
-  transform: translateY(-5px);
-}
-
-.merchant-image {
-  width: 100%;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-button {
-  background-color: #007bff;
+/* 左边灰色区域样式 */
+.sidebar {
+  width: 20%;
+  background-color: #2c3e50; /* 深灰色 */
   color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 10px 0;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* 右边白色区域样式 */
+.content {
+  width: 80%;
+  background-color: white;
+  padding: 20px;
 }
 </style>
