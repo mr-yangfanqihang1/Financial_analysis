@@ -109,7 +109,7 @@ export default {
 /* 页面整体布局 */
 .user-recommendation {
   padding: 20px;
-  background: linear-gradient(135deg, #d3e0ff, #b2dffb, #fef6e4); /* 修改为柔和渐变色，保持主色调一致 */
+  background: linear-gradient(135deg, #4facfe, #ff62a5); /* 修改为和主布局 .home 类一样的渐变背景 */
   color: #333;
   font-family: Arial, sans-serif;
 }
