@@ -1,91 +1,47 @@
 <template>
-  <div class="container-fluid">
-    <div class="row">
-      <!-- 左侧导航栏 -->
-      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
-        <div class="position-sticky">
-          <h4 class="mt-4 text-center">IKUUU VPN</h4>
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <router-link class="nav-link active" to="/">
-                <i class="fas fa-home me-2"></i>首页
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/shop">
-                <i class="fas fa-store me-2"></i>商店
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/account">
-                <i class="fas fa-user me-2"></i>我的账号
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/lines">
-                <i class="fas fa-network-wired me-2"></i>我的线路
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/invite">
-                <i class="fas fa-user-friends me-2"></i>邀请注册
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/help">
-                <i class="fas fa-question-circle me-2"></i>帮助
-              </router-link>
-            </li>
-          </ul>
-        </div>
-      </nav>
+  <div class="home">
+    <!-- 左侧灰色侧边栏 -->
+    <div class="sidebar">
+      <h2>Online Financial Analysis</h2>
+      <ul>
+        <li><i class="icon-home"></i> 首页</li>
+        <li><i class="icon-shop"></i> 商店</li>
+        <li><i class="icon-user"></i> 我的账户</li>
+        <li><i class="icon-wallet"></i> 我的钱包</li>
+        <li><i class="icon-invite"></i> 邀请注册</li>
+        <li><i class="icon-help"></i> 帮助</li>
+      </ul>
+    </div>
 
-      <!-- 主内容区域 -->
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-        <div class="pt-3 pb-2 mb-3 border-bottom">
-          <h2>首页</h2>
+    <!-- 右侧内容区域 -->
+    <div class="content">
+      <div class="info-cards">
+        <div class="info-card blue">
+          <h2>欺诈交易识别</h2>
+          <p>危险</p>
+          <small>专业版: 2025-01-08 过期</small>
         </div>
-        <div class="row">
-          <div class="col-md-3" v-for="(card, index) in cards" :key="index">
-            <div class="card" :class="card.bgClass + ' text-white mb-3'">
-              <div class="card-body">
-                <h5 class="card-title">{{ card.title }}</h5>
-                <p class="card-text">{{ card.content }}</p>
-                <small>{{ card.small }}</small>
-              </div>
-            </div>
-          </div>
+        <div class="info-card green">
+          <h2>商家推荐模块</h2>
+          <p>299.35 GB</p>
+          <small>今日使用: 42.61MB</small>
         </div>
-
-        <!-- 设置时间区域 -->
-        <div class="mb-4">
-          <h4>设定时间</h4>
-          <p>实际世界时间 (UTC+8): {{ realWorldTime }}</p>
-          <p>您的系统时间 (UTC+8): {{ systemTime }}</p>
-          <p class="text-danger">
-            请注意校准上面的两个时间，相差 10 秒内方可正常使用节点
-          </p>
+        <div class="info-card cyan">
+          <h2>用户推荐模块</h2>
+          <p>4 / 5</p>
+          <small>上次使用时间: 2024-11-18 19:56:27</small>
         </div>
-
-        <!-- 公告区域 -->
-        <div class="mb-4">
-          <h4>公告</h4>
-          <p>欢迎使用 iKuuu VPN 最新官网</p>
-          <ul>
-            <li v-for="(link, index) in announcements" :key="index">
-              <a :href="link.url">{{ link.url }}</a>
-            </li>
-          </ul>
+        <div class="info-card yellow">
+          <h2>用户信誉积分</h2>
+          <p>90 / 100</p>
+          <small>累计充值返利金额 ¥0</small>
         </div>
-
-        <!-- 流量使用情况 -->
-        <div class="mb-4">
-          <h4>流量使用情况</h4>
-          <div class="chart-container">
-            <p>这里将显示流量的图表。</p>
-          </div>
+        <div class="info-card purple">
+          <h2>系统健康检查</h2>
+          <p>正常</p>
+          <small>最后检查时间: 2024-11-18 21:00:00</small>
         </div>
-      </main>
+      </div>
     </div>
   </div>
 </template>
@@ -95,37 +51,18 @@ export default {
   name: 'HomeView',
   data () {
     return {
-      cards: [
-        {
-          title: '会员时长',
-          content: '52天',
-          small: '专业版: 2025-01-08 过期',
-          bgClass: 'bg-primary'
-        },
-        {
-          title: '剩余流量',
-          content: '299.35 GB',
-          small: '今日用量: 42.61MB',
-          bgClass: 'bg-success'
-        },
-        {
-          title: '在线设备数',
-          content: '4 / 5',
-          small: '上次使用时间: 2024-11-18 19:56:27',
-          bgClass: 'bg-info'
-        },
-        {
-          title: '钱包余额',
-          content: '&yen;0',
-          small: '累计获得返利金额: &yen;0',
-          bgClass: 'bg-warning'
-        }
-      ],
-      realWorldTime: '20:30:49',
-      systemTime: '20:30:50',
-      announcements: [
-        { url: 'https://ikuuu.one' },
-        { url: 'https://ikuuu.top' }
+      memberDuration: '52天',
+      trafficRemaining: '299.35 GB',
+      trafficUsedToday: '42.61MB',
+      onlineDevices: '4 / 5',
+      lastUsed: '2024-11-18 19:56:27',
+      walletBalance: '¥0',
+      totalRebate: '¥0',
+      systemHealthStatus: '正常',
+      lastCheckTime: '2024-11-18 21:00:00',
+      announcement: [
+        { text: 'https://ikuuu.one', link: 'https://ikuuu.one' },
+        { text: 'https://ikuuu.top', link: 'https://ikuuu.top' }
       ]
     }
   }
@@ -133,85 +70,140 @@ export default {
 </script>
 
 <style scoped>
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
+/* 主布局 */
+.home {
+  display: flex;
+  height: 100vh; /* 限制页面高度为视口高度 */
+  overflow: hidden; /* 防止滚动 */
+  background: linear-gradient(135deg, #4facfe, #ff62a5); /* 增强渐变效果的对比度 */
 }
-#sidebar {
-  background-color: #343a40;
-  min-height: 100vh;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+/* 左侧灰色侧边栏 */
+.sidebar {
+  width: 20%;
+  background-color: #2c3e50;
+  color: white;
+  padding: 10px 0; /* 上下不留空白 */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column; /* 垂直排列 */
+  position: relative; /* 更改为相对定位，使其随内容滚动 */
+  height: auto; /* 高度由内容决定 */
 }
-#sidebar h4 {
-  color: #fff;
-  padding: 20px;
-  font-weight: bold;
-  border-bottom: 1px solid #495057;
+
+/* 左侧侧边栏标题 */
+.sidebar h2 {
+  font-size: 1rem; /* 缩小字体 */
+  margin: 15px 0;
+  text-align: center;
 }
-#sidebar .nav-link {
-  color: #adb5bd;
-  font-weight: 500;
-  padding: 15px;
-  transition: background-color 0.3s, color 0.3s;
+
+/* 左侧侧边栏菜单 */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  flex-grow: 1; /* 占满剩余空间 */
 }
-#sidebar .nav-link.active {
-  background-color: #495057;
-  color: #fff;
+
+.sidebar ul li {
+  margin: 10px 0;
+  cursor: pointer;
+  font-size: 0.8rem; /* 缩小字体 */
+  padding: 10px 15px; /* 添加一点内边距 */
 }
-#sidebar .nav-link:hover {
-  background-color: #495057;
-  color: #fff;
+
+.sidebar ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* 鼠标悬停时增加视觉效果 */
 }
-.card {
-  border: none;
+
+/* 右侧内容区域 */
+.content {
+  width: 80%;
+  padding: 10px; /* 减少内边距 */
+  margin-left: 1%; /* 右侧内容区域留出左侧边栏的空间 */
+  overflow-y: auto; /* 防止超出视口 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: auto; /* 高度由内容决定 */
+}
+
+/* 信息卡片样式 */
+.info-cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  height: auto; /* 确保与左侧侧边栏高度相匹配 */
+  flex-wrap: wrap; /* 当卡片数量较多时换行显示 */
+}
+
+.info-card {
+  flex: 1;
+  margin: 10px;
+  padding: 10px; /* 调整内边距 */
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s;
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.3s ease-in-out; /* 添加过渡效果 */
 }
-.card:hover {
-  transform: translateY(-5px);
+
+.info-card:hover {
+  transform: translateY(-10px); /* 鼠标悬停时上升 */
 }
-.card-title {
-  font-weight: bold;
+
+.info-card h2 {
+  font-size: 1rem; /* 缩小标题字体 */
 }
-.chart-container {
-  background-color: #fff;
-  padding: 20px;
+
+.info-card p {
+  font-size: 1.6rem; /* 缩小内容字体 */
+  margin: 8px 0;
+}
+
+/* 卡片颜色样式 */
+.blue {
+  background-color: #3498db;
+}
+
+.green {
+  background-color: #2ecc71;
+}
+
+.cyan {
+  background-color: #1abc9c;
+}
+
+.yellow {
+  background-color: #f1c40f;
+}
+
+.purple {
+  background-color: #9b59b6; /* 新增紫色卡片背景色 */
+}
+
+/* 时间和公告样式 */
+.time-info {
+  margin-top: 15px; /* 调整顶部间距 */
+}
+
+.time-info .warning {
+  color: red;
+  font-size: 0.8rem; /* 缩小字体 */
+}
+
+.announcement ul {
+  padding-left: 20px;
+  font-size: 0.8rem; /* 缩小字体 */
+}
+
+.traffic-chart {
+  margin-top: 15px; /* 调整顶部间距 */
+  padding: 10px; /* 调整内边距 */
+  background-color: #ecf0f1;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  position: relative;
-  overflow: hidden;
-}
-.chart-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
-  z-index: -1;
-}
-.mb-4 h4 {
-  font-weight: bold;
-  color: #343a40;
-  border-left: 5px solid #007bff;
-  padding-left: 10px;
-}
-.mb-4 ul li a {
-  color: #007bff;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-.mb-4 ul li a:hover {
-  color: #0056b3;
-  text-decoration: underline;
-}
-.text-danger {
-  font-weight: bold;
-}
-.card-body small {
-  font-style: italic;
-  color: #f8f9fa;
+  font-size: 0.8rem; /* 缩小字体 */
 }
 </style>
