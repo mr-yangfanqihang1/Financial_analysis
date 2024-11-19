@@ -49,6 +49,14 @@ const routes = [
             /* webpackChunkName: "ClientCredit" */ "../views/ClientCredit.vue"
           ),
       },
+      {
+        path: "MchAnalysis",
+        name: "MchAnalysis",
+        component: () =>
+          import(
+            /* webpackChunkName: "ClientCredit" */ "../views/MchAnalysis.vue"
+          ),
+      },
       // {
       //   path: "HealthCheck",
       //   name: "HealthCheck",
