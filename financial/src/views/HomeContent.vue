@@ -28,9 +28,9 @@
       <small>累计充值返利金额 ¥0</small>
     </router-link>
 
-    <!-- 系统健康检查 -->
-    <router-link to="/HealthCheck" class="info-card purple">
-      <h2>系统健康检查</h2>
+    <!-- 商家数据分析 -->
+    <router-link to="/MchAnalysis" class="info-card purple">
+      <h2>商家数据分析</h2>
       <p>正常</p>
       <small>最后检查时间: 2024-11-18 21:00:00</small>
     </router-link>
