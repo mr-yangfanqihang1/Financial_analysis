@@ -97,7 +97,7 @@
     <h2>推荐商家</h2>
     <div class="merchant-list">
       <div v-for="merchant in merchants" :key="merchant.id" class="merchant-item">
-        <img :src="merchant.logo" alt="{{ merchant.name }} logo" class="merchant-logo" />
+        <img :src="merchant.logo" :alt="`${merchant.name} logo`" class="merchant-logo" />
         <div class="merchant-info">
           <h3>{{ merchant.name }}</h3>
           <p>{{ merchant.description }}</p>
