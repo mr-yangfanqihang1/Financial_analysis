@@ -1,48 +1,77 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    component: HomeView,
+    children: [
+      {
+        path: "",
+        name: "home", // 主页面默认显示内容
+        component: () =>
+          import(
+            /* webpackChunkName: "HomeContent" */ "../views/HomeContent.vue"
+          ),
+      },
+      {
+        path: "FraudDetection",
+        name: "FraudDetection",
+        component: () =>
+          import(
+            /* webpackChunkName: "FraudDetection" */ "../views/FraudDetection.vue"
+          ),
+      },
+      {
+        path: "MchRecommend",
+        name: "MchRecommend",
+        component: () =>
+          import(
+            /* webpackChunkName: "MchRecommend" */ "../views/MchRecommend.vue"
+          ),
+      },
+      {
+        path: "UserRecommend",
+        name: "UserRecommend",
+        component: () =>
+          import(
+            /* webpackChunkName: "UserRecommend" */ "../views/UserRecommend.vue"
+          ),
+      },
+      {
+        path: "ClientCredit",
+        name: "ClientCredit",
+        component: () =>
+          import(
+            /* webpackChunkName: "ClientCredit" */ "../views/ClientCredit.vue"
+          ),
+      },
+      {
+        path: "MchAnalysis",
+        name: "MchAnalysis",
+        component: () =>
+          import(
+            /* webpackChunkName: "ClientCredit" */ "../views/MchAnalysis.vue"
+          ),
+      },
+      // {
+      //   path: "HealthCheck",
+      //   name: "HealthCheck",
+      //   component: () =>
+      //     import(
+      //       /* webpackChunkName: "HealthCheck" */ "../views/HealthCheck.vue"
+      //     ),
+      // },
+    ],
   },
-  {
-    path: '/ClientCredit',
-    name: 'clientcredit',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ClientCredit.vue')
-  },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.E:\BigDataProject\Financial_analysis\financial\src\views\MchRecommend.vue
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // },
-  {
-    path: '/MchRecommend',
-    name: 'MchRecommend',
-    component: () => import(/* webpackChunkName: "about" */ '../views/MchRecommend.vue')
-  },
-  {
-    path: '/UserRecommend',
-    name: 'UserRecommend',
-    component: () => import(/* webpackChunkName: "about" */ '../views/UserRecommend.vue')
-  }
-  // {
-  //   path: '/merchant',
-  //   name: 'merchant',
-  //   component: () => import('../views/MchRecommend.vue')
-  // },
-
-]
+];
 
 const router = new VueRouter({
-  routes
-})
+  mode: "history", // 使用 HTML5 History 模式
+  routes,
+});
 
-export default router
+export default router;
