@@ -20,13 +20,13 @@ const routes = [
   //   name: 'about',
   //   // route level code-splitting
   //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.E:\BigDataProject\Financial_analysis\financial\src\views\ShangjiaRecommendation.vue
+  //   // which is lazy-loaded when the route is visited.E:\BigDataProject\Financial_analysis\financial\src\views\MchRecommend.vue
   //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   // },
   {
-    path: '/ShangjiaRecommendation',
-    name: 'ShangjiaRecommendation',
-    component: () => import(/* webpackChunkName: "about" */ '../views/ShangjiaRecommendation.vue')
+    path: '/MchRecommend',
+    name: 'MchRecommend',
+    component: () => import(/* webpackChunkName: "about" */ '../views/MchRecommend.vue')
   },
   {
     path: '/UserRecommend',
@@ -36,7 +36,7 @@ const routes = [
   // {
   //   path: '/merchant',
   //   name: 'merchant',
-  //   component: () => import('../views/ShangjiaRecommendation.vue')
+  //   component: () => import('../views/MchRecommend.vue')
   // },
 
 ]
