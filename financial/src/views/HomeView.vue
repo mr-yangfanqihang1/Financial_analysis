@@ -21,26 +21,21 @@
           <p>危险</p>
           <small>专业版: 2025-01-08 过期</small>
         </div>
-        <div class="info-card green">
+        <router-link to="/MchRecommend" class="info-card green">
           <h2>商家推荐模块</h2>
           <p>299.35 GB</p>
           <small>今日使用: 42.61MB</small>
-        </div>
-<!--        <div class="info-card cyan">-->
-<!--          <h2>用户推荐模块</h2>-->
-<!--          <p>4 / 5</p>-->
-<!--          <small>上次使用时间: 2024-11-18 19:56:27</small>-->
-<!--        </div>-->
+        </router-link>
         <router-link to="/UserRecommend" class="info-card cyan">
           <h2>用户推荐模块</h2>
           <p>4 / 5</p>
           <small>上次使用时间: 2024-11-18 19:56:27</small>
         </router-link>
-        <div class="info-card yellow">
+        <router-link to="/ClientCredit" class="info-card yellow">
           <h2>用户信誉积分</h2>
           <p>90 / 100</p>
           <small>累计充值返利金额 ¥0</small>
-        </div>
+        </router-link>
         <div class="info-card purple">
           <h2>系统健康检查</h2>
           <p>正常</p>
