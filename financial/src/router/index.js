@@ -27,6 +27,11 @@ const routes = [
     path: '/ShangjiaRecommendation',
     name: 'ShangjiaRecommendation',
     component: () => import(/* webpackChunkName: "about" */ '../views/ShangjiaRecommendation.vue')
+  },
+  {
+    path: '/UserRecommend',
+    name: 'UserRecommend',
+    component: () => import(/* webpackChunkName: "about" */ '../views/UserRecommend.vue')
   }
   // {
   //   path: '/merchant',
