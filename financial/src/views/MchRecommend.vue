@@ -582,14 +582,14 @@
 
 <template>
   <div class="merchant-recommendation">
-    <h2>推荐商家</h2>
+    <h2>推荐用户</h2>
 
     <!-- 搜索框 -->
     <div class="search-container">
       <input
           type="text"
           v-model="searchQuery"
-          placeholder="请输入用户ID搜索感兴趣的商户"
+          placeholder="请输入商户ID搜索感兴趣的用户"
           @input="filterMerchants"
       />
     </div>
@@ -616,22 +616,22 @@ export default {
       merchants: [
         {
           id: 1,
-          name: '商家甲',
-          description: '优质产品和服务，深受客户好评。',
+          name: '用户甲',
+          description: '喜欢小动物',
           logo: 'https://example.com/merchant-logo-a.jpg',
           link: 'https://example.com/merchant-a'
         },
         {
           id: 2,
-          name: '商家乙',
-          description: '提供实惠的产品，性价比高。',
+          name: '用户乙',
+          description: '交易诚信',
           logo: 'https://example.com/merchant-logo-b.jpg',
           link: 'https://example.com/merchant-b'
         },
         {
           id: 3,
-          name: '商家丙',
-          description: '新兴品牌，创新理念。',
+          name: '用户丙',
+          description: '喜欢玩具',
           logo: 'https://example.com/merchant-logo-c.jpg',
           link: 'https://example.com/merchant-c'
         }
