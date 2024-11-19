@@ -203,7 +203,10 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0056b3;
+/* 右边白色区域样式 */
+.content {
+  width: 80%;
+  background-color: white;
+  padding: 20px;
 }
 </style>
