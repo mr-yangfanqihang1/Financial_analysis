@@ -4,7 +4,7 @@
       <!-- 左侧导航栏 -->
       <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
         <div class="position-sticky">
-          <h4 class="mt-4 text-center">IKUUU VPN</h4>
+          <h4 class="mt-4 text-center">Online Financial Analysis</h4>
           <ul class="nav flex-column">
             <li class="nav-item">
               <router-link class="nav-link active" to="/">
@@ -46,12 +46,39 @@
           <h2>首页</h2>
         </div>
         <div class="row">
-          <div class="col-md-3" v-for="(card, index) in cards" :key="index">
-            <div class="card" :class="card.bgClass + ' text-white mb-3'">
+          <div class="col-md-3">
+            <div class="card text-white bg-primary mb-3">
               <div class="card-body">
-                <h5 class="card-title">{{ card.title }}</h5>
-                <p class="card-text">{{ card.content }}</p>
-                <small>{{ card.small }}</small>
+                <h5 class="card-title">会员时长</h5>
+                <p class="card-text">52天</p>
+                <small>专业版: 2025-01-08 过期</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-white bg-success mb-3">
+              <div class="card-body">
+                <h5 class="card-title">剩余流量</h5>
+                <p class="card-text">299.35 GB</p>
+                <small>今日用量: 42.61MB</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-white bg-info mb-3">
+              <div class="card-body">
+                <h5 class="card-title">在线设备数</h5>
+                <p class="card-text">4 / 5</p>
+                <small>上次使用时间: 2024-11-18 19:56:27</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="card text-white bg-warning mb-3">
+              <div class="card-body">
+                <h5 class="card-title">钱包余额</h5>
+                <p class="card-text">&yen;0</p>
+                <small>累计获得返利金额: &yen;0</small>
               </div>
             </div>
           </div>
@@ -63,7 +90,7 @@
           <p>实际世界时间 (UTC+8): {{ realWorldTime }}</p>
           <p>您的系统时间 (UTC+8): {{ systemTime }}</p>
           <p class="text-danger">
-            请注意校准上面的两个时间，相差 10 秒内方可正常使用节点
+            请注意校准上面的两个时间， 相差 10 秒内方可正常使用节点
           </p>
         </div>
 
@@ -73,7 +100,7 @@
           <p>欢迎使用 iKuuu VPN 最新官网</p>
           <ul>
             <li v-for="(link, index) in announcements" :key="index">
-              <a :href="link.url">{{ link.url }}</a>
+              <a :href="link" target="_blank">{{ link }}</a>
             </li>
           </ul>
         </div>
@@ -82,6 +109,7 @@
         <div class="mb-4">
           <h4>流量使用情况</h4>
           <div class="chart-container">
+            <!-- 可以使用 JavaScript 插入实际的图表 -->
             <p>这里将显示流量的图表。</p>
           </div>
         </div>
@@ -95,37 +123,11 @@ export default {
   name: 'HomeView',
   data () {
     return {
-      cards: [
-        {
-          title: '会员时长',
-          content: '52天',
-          small: '专业版: 2025-01-08 过期',
-          bgClass: 'bg-primary'
-        },
-        {
-          title: '剩余流量',
-          content: '299.35 GB',
-          small: '今日用量: 42.61MB',
-          bgClass: 'bg-success'
-        },
-        {
-          title: '在线设备数',
-          content: '4 / 5',
-          small: '上次使用时间: 2024-11-18 19:56:27',
-          bgClass: 'bg-info'
-        },
-        {
-          title: '钱包余额',
-          content: '&yen;0',
-          small: '累计获得返利金额: &yen;0',
-          bgClass: 'bg-warning'
-        }
-      ],
       realWorldTime: '20:30:49',
       systemTime: '20:30:50',
       announcements: [
-        { url: 'https://ikuuu.one' },
-        { url: 'https://ikuuu.top' }
+        'https://ikuuu.one',
+        'https://ikuuu.top'
       ]
     }
   }
