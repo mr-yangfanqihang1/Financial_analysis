@@ -227,6 +227,7 @@
     flex-direction: column;
     justify-content: center;
     transition: transform 0.3s ease-in-out;
+    text-decoration: none;
   }
   
   .info-card:hover {
