@@ -32,6 +32,11 @@ const routes = [
     path: '/UserRecommend',
     name: 'UserRecommend',
     component: () => import(/* webpackChunkName: "about" */ '../views/UserRecommend.vue')
+  },
+  {
+    path: '/FraudDetection',
+    name: 'FraudDetection',
+    component: () => import(/* webpackChunkName: "about" */ '../views/FraudDetection.vue')
   }
   // {
   //   path: '/merchant',

@@ -16,11 +16,16 @@
     <!-- 右侧内容区域 -->
     <div class="content">
       <div class="info-cards">
-        <div class="info-card blue">
+        <!-- <div class="info-card blue">
           <h2>欺诈交易识别</h2>
           <p>危险</p>
           <small>专业版: 2025-01-08 过期</small>
-        </div>
+        </div> -->
+        <router-link to="/FraudDetection" class="info-card cyan">
+          <h2>欺诈交易识别</h2>
+          <p>4 / 5</p>
+          <small>最新交易: 2024-11-18 19:56:27</small>
+        </router-link>
         <div class="info-card green">
           <h2>商家推荐模块</h2>
           <p>299.35 GB</p>
