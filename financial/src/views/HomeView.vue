@@ -71,6 +71,14 @@ export default {
   border-radius: 5px;
 }
 
+/* 移除 router-link 默认的下划线 */
+.sidebar ul li a {
+  text-decoration: none; /* 移除链接的下划线 */
+  color: inherit; /* 保持链接文字颜色与父级一致 */
+  display: flex; /* 使链接中的图标和文字在同一行显示 */
+  align-items: center; /* 垂直居中对齐 */
+}
+
 .sidebar ul li:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }

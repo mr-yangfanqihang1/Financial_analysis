@@ -50,6 +50,14 @@ const routes = [
           ),
       },
       {
+        path: "CreditOverview",
+        name: "CreditOverview",
+        component: () =>
+          import(
+            /* webpackChunkName: "CreditOverview" */ "../views/CreditOverview.vue"
+          ),
+      },
+      {
         path: "MchAnalysis",
         name: "MchAnalysis",
         component: () =>
