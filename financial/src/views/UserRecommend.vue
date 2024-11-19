@@ -7,7 +7,7 @@
     <div class="recommendation-list">
       <h2>推荐的商家</h2>
       <ul>
-        <li v-for="merchant in recommendedMerchants" :key="merchant.id">
+        <li v-for="merchant in recommendedMerchants" :key="merchant.id" class="merchant-card">
           <h3>{{ merchant.name }}</h3>
           <p>分类: {{ merchant.category }}</p>
           <p>评分: {{ merchant.rating }} / 5</p>
@@ -19,16 +19,18 @@
     <!-- 数据可视化区域 -->
     <div class="charts">
       <h2>推荐数据可视化</h2>
-      <!-- 扇形图 -->
-      <div class="chart-container">
-        <h3>推荐商家分类分布</h3>
-        <canvas id="categoryPieChart"></canvas>
-      </div>
+      <div class="charts-container">
+        <!-- 扇形图 -->
+        <div class="chart-container">
+          <h3>推荐商家分类分布</h3>
+          <canvas id="categoryPieChart"></canvas>
+        </div>
 
-      <!-- 条状图 -->
-      <div class="chart-container">
-        <h3>用户与商家互动数据</h3>
-        <canvas id="interactionBarChart"></canvas>
+        <!-- 条状图 -->
+        <div class="chart-container">
+          <h3>用户与商家互动数据</h3>
+          <canvas id="interactionBarChart"></canvas>
+        </div>
       </div>
     </div>
   </div>
@@ -104,45 +106,100 @@ export default {
 </script>
 
 <style scoped>
+/* 页面整体布局 */
 .user-recommendation {
   padding: 20px;
-  background-color: #f7f9fb;
+  background: linear-gradient(135deg, #d3e0ff, #b2dffb, #fef6e4); /* 修改为柔和渐变色，保持主色调一致 */
   color: #333;
   font-family: Arial, sans-serif;
 }
 
+/* 标题样式 */
 h1,
 h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-weight: bold;
+  color: #2c3e50;
 }
 
+/* 推荐商家列表样式 */
 .recommendation-list ul {
   list-style: none;
   padding: 0;
-}
-
-.recommendation-list ul li {
-  background-color: #ffffff;
-  margin: 10px 0;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.charts {
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
-  margin-top: 20px;
+  justify-content: center;
 }
 
+.merchant-card {
+  background-color: #ffffff;
+  margin: 10px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.merchant-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.merchant-card h3 {
+  margin: 10px 0;
+  color: #34495e;
+}
+
+.merchant-card p {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+/* 数据可视化区域 */
+.charts {
+  margin-top: 30px;
+}
+
+/* 包含图表的容器，水平排列图表 */
+.charts-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* 单个图表容器样式 */
 .chart-container {
   width: 45%;
   margin-bottom: 20px;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #34495e;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 768px) {
+  .charts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .chart-container {
+    width: 90%;
+  }
+
+  .merchant-card {
+    width: 90%;
+  }
 }
 </style>

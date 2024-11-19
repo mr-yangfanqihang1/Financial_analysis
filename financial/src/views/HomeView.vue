@@ -26,11 +26,16 @@
           <p>299.35 GB</p>
           <small>今日使用: 42.61MB</small>
         </div>
-        <div class="info-card cyan">
+<!--        <div class="info-card cyan">-->
+<!--          <h2>用户推荐模块</h2>-->
+<!--          <p>4 / 5</p>-->
+<!--          <small>上次使用时间: 2024-11-18 19:56:27</small>-->
+<!--        </div>-->
+        <router-link to="/UserRecommend" class="info-card cyan">
           <h2>用户推荐模块</h2>
           <p>4 / 5</p>
           <small>上次使用时间: 2024-11-18 19:56:27</small>
-        </div>
+        </router-link>
         <div class="info-card yellow">
           <h2>用户信誉积分</h2>
           <p>90 / 100</p>
