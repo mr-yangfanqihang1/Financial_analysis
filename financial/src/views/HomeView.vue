@@ -19,7 +19,7 @@
         <router-link tag="li" to="/ClientCredit">
           <i class="icon-credit"></i> 用户信誉积分
         </router-link>
-        <router-link tag="li" to="/HealthCheck">
+        <router-link tag="li" to="/MchAnalysis">
           <i class="icon-health"></i> 商家数据分析
         </router-link>
       </ul>
