@@ -22,15 +22,15 @@ import java.util.Arrays;
 @RequestMapping("/api")
 public class ChurnData {
     private SessionUtil cookie;
-    @Autowired
-    private MchAnalysisService mchAnalysisService;
+//    @Autowired
+//    private MchAnalysisService mchAnalysisService;
 
     // 全部商家统计
-    @RequestMapping("/getOfflineMchTotalMessage")
-    public Result getOfflineMchTotalMessage(){
-        ArrayList<Integer> l = new ArrayList<>(Arrays.asList(100,1000,10000));
-        return Result.success(l);
-    }
+//    @RequestMapping("/getOfflineMchTotalMessage")
+//    public Result getOfflineMchTotalMessage(){
+//        ArrayList<Integer> l = new ArrayList<>(Arrays.asList(100,1000,10000));
+//        return Result.success(l);
+//    }
 
 
 }
