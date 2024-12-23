@@ -70,14 +70,20 @@ export default {
   /**
    * 获取具体某一商家统计数据
    * [xieyx]
-   * @param {*} merchantId 商家ID
+   * @param {*} Mchid 商家ID
    * @returns {Promise} Promise
    */
-  async getMerchantStats(merchantId){
-    return apiClient.get(`/api/getMchStats?Mchid=${merchantId}`)
+  async getMerchantStats(Mchid){
+    return apiClient.get(`/api/getMchStats?Mchid=${Mchid}`)
+  },
+  
+  /**
+   * 获取潜在流失用户
+   * @returns {Promise} Promise
+   */
+  async getChurnData(){
+    return apiClient.get(`/api/getChurnData`)
   }
-
-
   
 
  

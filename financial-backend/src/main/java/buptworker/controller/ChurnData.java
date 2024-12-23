@@ -20,10 +20,10 @@ import java.util.Arrays;
 @RestController
 @CrossOrigin(origins = "http://localhost:7000", allowCredentials = "true")
 @RequestMapping("/api")
-public class MchAnalysisController {
+public class ChurnData {
     private SessionUtil cookie;
-//    @Autowired
-//    private MchAnalysisService mchAnalysisService;
+    @Autowired
+    private MchAnalysisService mchAnalysisService;
 
     // 全部商家统计
     @RequestMapping("/getOfflineMchTotalMessage")
@@ -31,16 +31,6 @@ public class MchAnalysisController {
         ArrayList<Integer> l = new ArrayList<>(Arrays.asList(100,1000,10000));
         return Result.success(l);
     }
-
-
-    @RequestMapping("/getRealtimeMchTotalMessage")
-    public Result getRealtimeMchTotalMessage(){
-        ArrayList<Integer> l = new ArrayList<>(Arrays.asList(1000000,1000,100));
-        return Result.success(l);
-    }
-
-
-
 
 
 }
