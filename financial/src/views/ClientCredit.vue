@@ -88,11 +88,11 @@ export default {
 
     // 信用评分历史趋势数据
     const creditScoreTrendData = ref({
-      labels: ['2021年', '2022年', '2023年', '2024年'],
+      labels: ['2021年', '2022年', '2023年', '2024年', '2025年', '2026年', '2027年', '2028年', '2029年', '2030年'], // 2021到2030年
       datasets: [
         {
           label: '信用评分历史',
-          data: [750, 780, 790, 750],
+          data: [750, 780, 790, 750, 800, 820, 810, 830, 850, 860],  // 每年提供对应的信用评分数据
           borderColor: '#42A5F5',
           backgroundColor: 'rgba(66, 165, 245, 0.2)',
           fill: true,
@@ -129,10 +129,10 @@ export default {
       scales: {
         y: {
           min: 0,
-          max: 100, // 对于百分比的图表设置最大值为100
+          max: 850, // 最大值可以设为850，因为信用评分一般在此范围内
         },
         x: {
-          beginAtZero: true
+          beginAtZero: true,
         }
       }
     }
@@ -148,7 +148,7 @@ export default {
 
       // 信用评分历史趋势图表
       new Chart(document.getElementById('creditScoreTrendChart'), {
-        type: 'line',
+        type: 'line', // 折线图
         data: creditScoreTrendData.value,
         options: chartOptions,
       })

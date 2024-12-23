@@ -27,7 +27,19 @@
   
       <!-- 用户信息概览列表 -->
       <div class="user-list">
-        <h3>所有用户信息</h3>
+        <!-- 标题和搜索框在同一行 -->
+        <div class="table-header">
+          <h3>所有用户信息</h3>
+          <div class="search-container">
+            <input 
+              v-model="searchId" 
+              type="text" 
+              placeholder="按用户ID搜索" 
+              class="search-input"
+            />
+          </div>
+        </div>
+  
         <table>
           <thead>
             <tr>
@@ -38,7 +50,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="user in users" :key="user.id">
+            <tr v-for="user in filteredUsers" :key="user.id">
               <td>{{ user.username }}</td>
               <td>{{ user.creditScore }}</td>
               <td>{{ user.debtRatio }}%</td>
@@ -51,7 +63,7 @@
   </template>
   
   <script>
-  import { onMounted, ref } from 'vue'
+  import { onMounted, ref, computed } from 'vue'
   import Chart from 'chart.js/auto'
   
   export default {
@@ -66,10 +78,21 @@
         { id: 5, username: 'user5', creditScore: 650, debtRatio: 45, repaymentHistory: 70 },
       ])
   
+      // 搜索框绑定的用户 ID
+      const searchId = ref('')
+  
       // 计算统计数据
       const avgCreditScore = ref(0)
       const avgDebtRatio = ref(0)
       const avgRepaymentHistory = ref(0)
+  
+      // 过滤后的用户数据（根据搜索框输入的ID进行过滤）
+      const filteredUsers = computed(() => {
+        if (!searchId.value) {
+          return users.value
+        }
+        return users.value.filter(user => user.id.toString().includes(searchId.value))
+      })
   
       // 计算统计数据
       onMounted(() => {
@@ -114,8 +137,10 @@
         avgCreditScore,
         avgDebtRatio,
         avgRepaymentHistory,
+        searchId,
+        filteredUsers
       }
-    },
+    }
   }
   </script>
   
@@ -168,6 +193,28 @@
   .stat-card p {
     font-size: 24px;
     font-weight: bold;
+  }
+  
+  /* 表格标题和搜索框容器 */
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* 搜索框 */
+  .search-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .search-input {
+    padding: 10px;
+    width: 200px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
   }
   
   /* 图表容器 */
