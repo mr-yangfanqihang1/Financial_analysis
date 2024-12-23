@@ -73,6 +73,14 @@ const routes = [
             /* webpackChunkName: "ClientCredit" */ "../views/SingleMchAnalysis.vue"
           ),
       },
+      {
+        path: "ChurnForecast",
+        name: "ChurnForecast",
+        component: () =>
+          import(
+            /* webpackChunkName: "ClientCredit" */ "../views/ChurnForecast.vue"
+          ),
+      },
       // {
       //   path: "HealthCheck",
       //   name: "HealthCheck",
