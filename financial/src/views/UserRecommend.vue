@@ -57,7 +57,7 @@
 <script>
 import { onMounted, ref } from "vue";
 import Chart from "chart.js/auto";
-import axios from "axios"; // 确保已经安装 axios：npm install axios
+import api from "../api/api.js"
 
 export default {
   name: "UserRecommendationModule",
@@ -100,19 +100,18 @@ export default {
       isLoading.value = true;
 
       try {
-        // 调用后端 API 获取推荐结果
-        const response = await axios.get(`http://localhost:8080/api/recommendations?userId=${inputId}`);
+        const response = await api.getUserPairs(inputId);
 
-        if (response.data && response.data.length > 0) {
-          relatedValues.value = response.data;
-          successMessage.value = `成功找到 ID 为 ${inputId} 的对应值。`;
+        if (response.data.data && response.data.data.length > 0) {
+          relatedValues.value = response.data.data;
+          successMessage.value = `成功找到 ID 为 ${inputId} 的推荐结果。`;
         } else {
           errorMessage.value = `未找到 ID 为 ${inputId} 的对应值。`;
         }
       } catch (error) {
         console.error(error);
         if (error.response && error.response.status === 404) {
-          errorMessage.value = `未找到 ID 为 ${inputId} 的对应值。`;
+          errorMessage.value = `未找到 ID 为 ${inputId} 的推荐数据。`;
         } else {
           errorMessage.value = "获取数据时出错，请稍后再试。";
         }
@@ -257,11 +256,11 @@ h2 {
   cursor: pointer;
 }
 
-.user-input button:hover {
-  background-color: #2980b9;
+.user-input button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
 }
 
-/* 错误和成功消息样式 */
 .error {
   color: red;
   margin-top: 10px;
@@ -273,52 +272,14 @@ h2 {
 }
 
 .loading {
-  color: #f1c40f;
+  color: orange;
   margin-top: 10px;
 }
 
 /* 数据可视化区域 */
-.charts {
-  margin-top: 30px;
-}
-
-/* 包含图表的容器，水平排列图表 */
 .charts-container {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-/* 单个图表容器样式 */
-.chart-container {
-  width: 45%;
-  margin-bottom: 20px;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.chart-container h3 {
-  text-align: center;
-  margin-bottom: 10px;
-  color: #34495e;
-}
-
-/* 响应式设计 */
-@media screen and (max-width: 768px) {
-  .charts-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .chart-container {
-    width: 90%;
-  }
-
-  .original-merchants ul li,
-  .recommendation-list ul li {
-    width: 90%;
-  }
+  justify-content: space-around;
+  margin-top: 30px;
 }
 </style>

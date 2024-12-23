@@ -83,9 +83,14 @@ export default {
    */
   async getChurnData(){
     return apiClient.get(`/api/getChurnData`)
-  }
-  
+  },
 
+  /**
+   * 
+   */
+  async getUserPairs(inputId){
+    return apiClient.get(`/api/getfourint?userId=${inputId}`)
+  }
  
 };
 /**
