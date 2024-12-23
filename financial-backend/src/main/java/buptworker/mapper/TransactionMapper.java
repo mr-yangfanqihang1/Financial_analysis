@@ -39,13 +39,13 @@ public interface TransactionMapper {
     List<Transaction> getAllTransactions();
 
     // 根据 merchant_id 查找交易记录
-    @Select("SELECT * FROM transactions_data WHERE merchant_id = #{merchantId}")
-    Transaction findTransactionByMerchantId(@Param("merchantId") Long merchantId);
+    @Select("SELECT * FROM transactions_data WHERE id = #{id}")
+    Transaction findTransactionById(@Param("id") Long id);
 
     // 更新交易记录的预测结果
     @Update("""
             UPDATE transactions_data 
-            SET is_fraudulent = #{isFraudulent}, 
+            SET is_fraudulent = #{is_fraudulent}, 
                 prediction = #{prediction}
             WHERE id = #{id}
             """)

@@ -3,27 +3,51 @@ package buptworker.entity;
 import java.math.BigDecimal;
 
 public class Transaction {
-
     private Long id;
-    private Long merchantId;
-    private Boolean isFraudulent;
-    private Boolean prediction;
-    private Double amount;
+    private Long merchant_id;
+    private String is_fraudulent;
+    private BigDecimal amount; // Decimal type
     private String date;
-    private String useChip;
-    private String merchantState;
+    private String use_chip;
+    private String merchant_state;
     private String mcc;
-    private String clientId;
-    private Integer creditScore;
-    private Integer currentAge;
+    private Integer client_id; // Should be Integer, not String
+    private Integer credit_score;
+    private Integer current_age;
     private String gender;
-    private BigDecimal yearlyIncome;
-    private BigDecimal totalDebt;
-    private Integer numCreditCards;
-    private String cardType;
-    private BigDecimal creditLimit;
-    private Integer yearPinLastChanged;
-    private Boolean hasChip;
+    private String yearly_income; // String for varchar(50)
+    private String total_debt;    // String for varchar(50)
+    private Integer num_credit_cards;
+    private String card_type;
+    private String credit_limit; // String for varchar(50)
+    private Integer year_pin_last_changed;
+    private String has_chip; // String for varchar(3)
+    private String prediction;
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                ", merchant_id=" + merchant_id +
+                ", is_fraudulent='" + is_fraudulent + '\'' +
+                ", prediction=" + prediction +
+                ", amount=" + amount +
+                ", date='" + date + '\'' +
+                ", use_chip='" + use_chip + '\'' +
+                ", merchant_state='" + merchant_state + '\'' +
+                ", mcc='" + mcc + '\'' +
+                ", client_id=" + client_id +
+                ", credit_score=" + credit_score +
+                ", current_age=" + current_age +
+                ", gender='" + gender + '\'' +
+                ", yearly_income='" + yearly_income + '\'' +
+                ", total_debt='" + total_debt + '\'' +
+                ", num_credit_cards=" + num_credit_cards +
+                ", card_type='" + card_type + '\'' +
+                ", credit_limit='" + credit_limit + '\'' +
+                ", year_pin_last_changed=" + year_pin_last_changed +
+                ", has_chip='" + has_chip + '\'' +
+                '}';
+    }
 
     // Getters and Setters
     public Long getId() {
@@ -34,35 +58,35 @@ public class Transaction {
         this.id = id;
     }
 
-    public Long getMerchantId() {
-        return merchantId;
+    public Long getMerchant_id() {
+        return merchant_id;
     }
 
-    public void setMerchantId(Long merchantId) {
-        this.merchantId = merchantId;
+    public void setMerchant_id(Long merchant_id) {
+        this.merchant_id = merchant_id;
     }
 
-    public Boolean getIsFraudulent() {
-        return isFraudulent;
+    public String getIs_fraudulent() {
+        return is_fraudulent;
     }
 
-    public void setIsFraudulent(Boolean isFraudulent) {
-        this.isFraudulent = isFraudulent;
+    public void setIs_fraudulent(String is_fraudulent) {
+        this.is_fraudulent = is_fraudulent;
     }
 
-    public Boolean getPrediction() {
+    public String getPrediction() {
         return prediction;
     }
 
-    public void setPrediction(Boolean prediction) {
+    public void setPrediction(String prediction) {
         this.prediction = prediction;
     }
 
-    public Double getAmount() {
+    public BigDecimal getAmount() {
         return amount;
     }
 
-    public void setAmount(Double amount) {
+    public void setAmount(BigDecimal amount) {
         this.amount = amount;
     }
 
@@ -74,20 +98,20 @@ public class Transaction {
         this.date = date;
     }
 
-    public String getUseChip() {
-        return useChip;
+    public String getUse_chip() {
+        return use_chip;
     }
 
-    public void setUseChip(String useChip) {
-        this.useChip = useChip;
+    public void setUse_chip(String use_chip) {
+        this.use_chip = use_chip;
     }
 
-    public String getMerchantState() {
-        return merchantState;
+    public String getMerchant_state() {
+        return merchant_state;
     }
 
-    public void setMerchantState(String merchantState) {
-        this.merchantState = merchantState;
+    public void setMerchant_state(String merchant_state) {
+        this.merchant_state = merchant_state;
     }
 
     public String getMcc() {
@@ -98,28 +122,28 @@ public class Transaction {
         this.mcc = mcc;
     }
 
-    public String getClientId() {
-        return clientId;
+    public Integer getClient_id() {
+        return client_id;
     }
 
-    public void setClientId(String clientId) {
-        this.clientId = clientId;
+    public void setClient_id(Integer client_id) {
+        this.client_id = client_id;
     }
 
-    public Integer getCreditScore() {
-        return creditScore;
+    public Integer getCredit_score() {
+        return credit_score;
     }
 
-    public void setCreditScore(Integer creditScore) {
-        this.creditScore = creditScore;
+    public void setCredit_score(Integer credit_score) {
+        this.credit_score = credit_score;
     }
 
-    public Integer getCurrentAge() {
-        return currentAge;
+    public Integer getCurrent_age() {
+        return current_age;
     }
 
-    public void setCurrentAge(Integer currentAge) {
-        this.currentAge = currentAge;
+    public void setCurrent_age(Integer current_age) {
+        this.current_age = current_age;
     }
 
     public String getGender() {
@@ -130,59 +154,59 @@ public class Transaction {
         this.gender = gender;
     }
 
-    public BigDecimal getYearlyIncome() {
-        return yearlyIncome;
+    public String getYearly_income() {
+        return yearly_income;
     }
 
-    public void setYearlyIncome(BigDecimal yearlyIncome) {
-        this.yearlyIncome = yearlyIncome;
+    public void setYearly_income(String yearly_income) {
+        this.yearly_income = yearly_income;
     }
 
-    public BigDecimal getTotalDebt() {
-        return totalDebt;
+    public String getTotal_debt() {
+        return total_debt;
     }
 
-    public void setTotalDebt(BigDecimal totalDebt) {
-        this.totalDebt = totalDebt;
+    public void setTotal_debt(String total_debt) {
+        this.total_debt = total_debt;
     }
 
-    public Integer getNumCreditCards() {
-        return numCreditCards;
+    public Integer getNum_credit_cards() {
+        return num_credit_cards;
     }
 
-    public void setNumCreditCards(Integer numCreditCards) {
-        this.numCreditCards = numCreditCards;
+    public void setNum_credit_cards(Integer num_credit_cards) {
+        this.num_credit_cards = num_credit_cards;
     }
 
-    public String getCardType() {
-        return cardType;
+    public String getCard_type() {
+        return card_type;
     }
 
-    public void setCardType(String cardType) {
-        this.cardType = cardType;
+    public void setCard_type(String card_type) {
+        this.card_type = card_type;
     }
 
-    public BigDecimal getCreditLimit() {
-        return creditLimit;
+    public String getCredit_limit() {
+        return credit_limit;
     }
 
-    public void setCreditLimit(BigDecimal creditLimit) {
-        this.creditLimit = creditLimit;
+    public void setCredit_limit(String credit_limit) {
+        this.credit_limit = credit_limit;
     }
 
-    public Integer getYearPinLastChanged() {
-        return yearPinLastChanged;
+    public Integer getYear_pin_last_changed() {
+        return year_pin_last_changed;
     }
 
-    public void setYearPinLastChanged(Integer yearPinLastChanged) {
-        this.yearPinLastChanged = yearPinLastChanged;
+    public void setYear_pin_last_changed(Integer year_pin_last_changed) {
+        this.year_pin_last_changed = year_pin_last_changed;
     }
 
-    public Boolean getHasChip() {
-        return hasChip;
+    public String getHas_chip() {
+        return has_chip;
     }
 
-    public void setHasChip(Boolean hasChip) {
-        this.hasChip = hasChip;
+    public void setHas_chip(String has_chip) {
+        this.has_chip = has_chip;
     }
 }
