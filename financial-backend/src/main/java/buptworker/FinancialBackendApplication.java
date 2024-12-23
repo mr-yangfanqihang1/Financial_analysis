@@ -11,4 +11,5 @@ public class FinancialBackendApplication {
     public static void main(String[] args) {
         SpringApplication.run(FinancialBackendApplication.class, args);
     }
+
 }

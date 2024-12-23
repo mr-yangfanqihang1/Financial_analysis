@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:7000", allowCredentials = "true")
 public class SimulatedTimeController {
 
     @Autowired

@@ -29,41 +29,56 @@ const apiClient = axios.create({
 export default {
  
   /**
-   * 获取商家数据（首页）
-   *
-   * @returns {Promise} Promise
-   */
-  async getCurData() {
-    return apiClient.get(`/api/curData`)
-  },
-
-  /**
-   * 获取商家订单数据（首页）
-   * 
+   * 获取离线整体商家统计信息（总数，销售额，销量）
+   * [xieyx]
    * 
    * @returns {Promise} Promise
    */
-  async getMonthlyOrderStats() {
-    return apiClient.get(`/api/monthlyOrderStats`)
+  async getOfflineMchTotalMessage(){
+    return apiClient.get(`/api/getOfflineMchTotalMessage`)
   },
 
-  /**
-   * 获取商家菜品数据（首页）
+   /**
+   * 获取实时整体商家统计信息（总数，销售额，销量）
+   * [xieyx]
    * 
    * @returns {Promise} Promise
    */
-  async getProdStats() {
-    return apiClient.get(`/api/prodStats`)
+   async getRealtimeMchTotalMessage(){
+    return apiClient.get(`/api/getRealtimeMchTotalMessage`)
   },
 
   /**
-   * 获取商家信息（首页）
-   * 
-   * @returns {PromiseM} Promise
+   * 获取离线商家整体统计图表数据
+   * [xieyx]
+   * @returns {Promise} Promise
    */
-  async getMerchantInfo() {
-    return apiClient.get(`/api/merchantInfo`)
+  async getOfflineMchTotalChartData(){
+    return apiClient.get(`/api/getOfflineMchTotalChartData`)
   },
+
+
+  /**
+   * 获取实时商家整体统计图表数据
+   * [xieyx]
+   * @returns {Promise} Promise
+   */
+  async getRealtimeMchTotalChartData(){
+    return apiClient.get(`/api/getRealtimeMchTotalChartData`)
+  },
+
+  /**
+   * 获取具体某一商家统计数据
+   * [xieyx]
+   * @param {*} merchantId 商家ID
+   * @returns {Promise} Promise
+   */
+  async getMerchantStats(merchantId){
+    return apiClient.get(`/api/getMchStats?Mchid=${merchantId}`)
+  }
+
+
+  
 
  
 };
@@ -82,3 +97,10 @@ export default {
  *     console.error('获取商品列表时出错:', error);
  *   });
  */
+
+/*
+
+getMerchantTypes() {
+    return apiClient.get(`/api/merchant-type`);
+  },
+*/
