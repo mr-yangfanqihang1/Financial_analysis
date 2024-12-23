@@ -17,7 +17,7 @@ import axios from 'axios';
 //   }
 // });
 const apiClient = axios.create({
-  baseURL: 'http://localhost:8081/', // 根据你的后端服务地址调整
+  baseURL: 'http://localhost:8080/', // 根据你的后端服务地址调整
   timeout: 10000, // 请求超时时间
 //   withCredentials: true,              // 允许发送 Cookie
 })
@@ -70,14 +70,20 @@ export default {
   /**
    * 获取具体某一商家统计数据
    * [xieyx]
-   * @param {*} merchantId 商家ID
+   * @param {*} Mchid 商家ID
    * @returns {Promise} Promise
    */
-  async getMerchantStats(merchantId){
-    return apiClient.get(`/api/getMchStats?Mchid=${merchantId}`)
+  async getMerchantStats(Mchid){
+    return apiClient.get(`/api/getMchStats?Mchid=${Mchid}`)
+  },
+  
+  /**
+   * 获取潜在流失用户
+   * @returns {Promise} Promise
+   */
+  async getChurnData(){
+    return apiClient.get(`/api/getChurnData`)
   }
-
-
   
 
  

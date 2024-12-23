@@ -129,7 +129,7 @@ export default {
       }
     },
     async fetchRealtimeChartData() {
-        try{
+      try{
         const response = await api.getRealtimeMchTotalChartData();
         this.statisticsData = response.data.data.statisticsData;
         this.labelsData = response.data.data.labelsData; 

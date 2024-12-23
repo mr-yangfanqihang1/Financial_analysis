@@ -1,7 +1,6 @@
 package buptworker.controller;
 
 import buptworker.entity.Result;
-import buptworker.service.MchAnalysisService;
 import buptworker.util.SessionUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,26 +20,17 @@ import java.util.Arrays;
 @RestController
 @CrossOrigin(origins = "http://localhost:7000", allowCredentials = "true")
 @RequestMapping("/api")
-public class MchAnalysisController {
+public class ChurnData {
     private SessionUtil cookie;
-    @Autowired
-    private MchAnalysisService mchAnalysisService;
+//    @Autowired
+//    private MchAnalysisService mchAnalysisService;
 
     // 全部商家统计
-    //商家总数   总销售额   总销量
-    @RequestMapping("/getOfflineMchTotalMessage")
-    public Result getOfflineMchTotalMessage(){
-        return Result.success(mchAnalysisService.getOfflineMchTotalMessage());
-    }
-
-    //当日的   商家总数   总销售额   总销量
-    @RequestMapping("/getRealtimeMchTotalMessage")
-    public Result getRealtimeMchTotalMessage(){
-        return Result.success(mchAnalysisService.getRealtimeMchTotalMessage());
-    }
-
-
-
+//    @RequestMapping("/getOfflineMchTotalMessage")
+//    public Result getOfflineMchTotalMessage(){
+//        ArrayList<Integer> l = new ArrayList<>(Arrays.asList(100,1000,10000));
+//        return Result.success(l);
+//    }
 
 
 }
