@@ -18,7 +18,7 @@
           :class="getCardColor(index)"
         >
           <h2>{{ user.id }}</h2>
-          <p>流失概率: {{ user.probability }}</p>
+          <p>流失概率: {{ user.p }}</p>
         </div>
       </div>
     </section>
@@ -32,14 +32,7 @@ export default {
   data() {
     return {
       // 定义用户数据
-      users: [
-        { id: "用户ID1", probability: "P(1)" },
-        { id: "用户ID2", probability: "P(2)" },
-        { id: "用户ID3", probability: "P(3)" },
-        { id: "用户ID4", probability: "P(4)" },
-        { id: "用户ID5", probability: "P(5)" },
-        { id: "用户ID6", probability: "P(6)" },
-      ],
+      users: null,
     };
   },
   methods: {
