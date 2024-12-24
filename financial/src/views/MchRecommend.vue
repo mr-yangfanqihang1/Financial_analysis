@@ -26,9 +26,6 @@
 <!--      >-->
 <!--        <div class="user-content">-->
 <!--          <h3>用户ID: {{ user.client_id }}</h3>-->
-<!--          <p>兴趣分类: {{ user.description }}</p>-->
-<!--          <p>评分: {{ user.rating }} / 5</p>-->
-<!--          <p>距离: {{ user.distance }} km</p>-->
 <!--        </div>-->
 <!--      </div>-->
 <!--    </div>-->
@@ -81,9 +78,6 @@
 <!--        const result = await response.json();-->
 <!--        this.recommendedUsers = result.recommended_users.map((id) => ({-->
 <!--          client_id: id,-->
-<!--          description: "兴趣分类示例", // 模拟兴趣分类-->
-<!--          rating: (Math.random() * 5).toFixed(1), // 模拟评分-->
-<!--          distance: (Math.random() * 10).toFixed(1), // 模拟距离-->
 <!--        }));-->
 <!--      } catch (error) {-->
 <!--        console.error(error);-->
@@ -186,12 +180,6 @@
 <!--  margin-bottom: 10px;-->
 <!--  color: #4e73df;-->
 <!--}-->
-
-<!--.user-content p {-->
-<!--  font-size: 1rem;-->
-<!--  margin: 5px 0;-->
-<!--  color: #555;-->
-<!--}-->
 <!--</style>-->
 
 <template>
@@ -221,6 +209,8 @@
       >
         <div class="user-content">
           <h3>用户ID: {{ user.client_id }}</h3>
+          <!-- 显示兴趣度 -->
+          <p>兴趣度: {{ user.interest_score.toFixed(2) }}</p>
         </div>
       </div>
     </div>
@@ -271,8 +261,12 @@ export default {
 
         // 获取返回的推荐用户数据
         const result = await response.json();
-        this.recommendedUsers = result.recommended_users.map((id) => ({
-          client_id: id,
+
+        // 假设后端返回的数据结构如下：
+        // { recommended_users: [{ client_id: 12345, interest_score: 0.876 }, ...] }
+        this.recommendedUsers = result.recommended_users.map((user) => ({
+          client_id: user.client_id,
+          interest_score: user.interest_score, // 确保包含兴趣度
         }));
       } catch (error) {
         console.error(error);
@@ -374,5 +368,10 @@ h3 {
   font-size: 1.3rem;
   margin-bottom: 10px;
   color: #4e73df;
+}
+
+.user-content p {
+  font-size: 1.1rem;
+  color: #666;
 }
 </style>
