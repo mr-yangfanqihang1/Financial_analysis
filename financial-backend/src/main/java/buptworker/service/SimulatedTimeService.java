@@ -8,7 +8,7 @@ import java.time.temporal.ChronoUnit;
 @Service
 public class SimulatedTimeService {
 
-    private LocalDateTime simulatedCurrentTime = LocalDateTime.of(2015, 1, 1, 0, 0); // 初始模拟时间
+    private LocalDateTime simulatedCurrentTime = LocalDateTime.of(2019, 1, 1, 0, 0); // 初始模拟时间
     private long simulationSpeed = 60; // 模拟速率：1秒现实时间 = 60秒模拟时间
 
     public LocalDateTime getSimulatedCurrentTime() {
