@@ -16,11 +16,11 @@
         <router-link tag="li" to="/UserRecommend">
           <i class="icon-user-recommend"></i> 用户推荐模块
         </router-link>
-        <router-link tag="li" to="/ClientCredit">
-          <i class="icon-credit"></i> 用户信誉积分
-        </router-link>
         <router-link tag="li" to="/MchAnalysis">
           <i class="icon-health"></i> 商家数据分析
+        </router-link>
+        <router-link tag="li" to="/ChurnForecast">
+          <i class="icon-credit"></i> 流失用户预测
         </router-link>
       </ul>
     </div>
