@@ -1,5 +1,0 @@
-![alt text](image.png)
-![alt text](image-1.png)
-![alt text](image-2.png)
-![alt text](image-3.png)
-[text](../../../../Application/蓝色莫兰迪简约课堂展示课件学术汇报通用ppt演示文稿.pdf)
