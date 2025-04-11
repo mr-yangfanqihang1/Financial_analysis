@@ -1,8 +1,4 @@
 # 🚀 电商智能风控与推荐系统
-![alt text](image/image.png)
-![alt text](image/image1.png)
-![alt text](image/image2.png)
-![alt text](image/image3.png)
 # 项目背景和目的
 
 ## 1.1 项目背景
@@ -158,3 +154,9 @@
 ![alt text](image-3.png)
 ### 后端接收数据，并存入数据库
 ![alt text](image-4.png)
+
+## 6.1 前端效果
+![alt text](image/image.png)
+![alt text](image/image1.png)
+![alt text](image/image2.png)
+![alt text](image/image3.png)
