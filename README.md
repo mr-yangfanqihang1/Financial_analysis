@@ -139,3 +139,19 @@
 
 ### 整体架构
 ![alt text](image/image4.png)
+![alt text](image.png)
+## 5.1 欺诈预测结果
+![alt text](image/预测结果.png)
+
+## 5.2 spring-boot 与 Pyspark交互
+模型和编码文件存入HDFS
+![alt text](image-1.png)
+PySpark控制台：
+![alt text](image-2.png)
+13. 连接后端Spring-boot：
+•	提供标准化接口，便于扩展和维护。
+•	数据交互：通过 HTTP 协议连接后端Spring-boot，实时获取数据和返回预测结果。
+运行在spark上的模型监听spring-boot端口获取数据进行预测并返回结果
+![alt text](image-3.png)
+后端接收数据，并存入数据库
+![alt text](image-4.png)
