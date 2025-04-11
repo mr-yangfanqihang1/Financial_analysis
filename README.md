@@ -36,7 +36,9 @@
 - Flume1.10.0
 - zookeeper3.7.1
 - kafka3.3.1
+
 ![alt text](image/集群规划.png)
+
 # 三、项目数据及来源
 
 ## 3.1 项目数据
@@ -136,6 +138,9 @@
 ### 整体架构
 ![alt text](image/image4.png)
 ![alt text](image.png)
+
+# 五、 详细讲解——以欺诈预测为例
+
 ## 5.1 欺诈预测结果
 ![alt text](image/预测结果.png)
 
@@ -155,7 +160,7 @@
 ### 后端接收数据，并存入数据库
 ![alt text](image-4.png)
 
-## 6.1 前端效果
+## 六、 前端效果
 ![alt text](image/image.png)
 ![alt text](image/image1.png)
 ![alt text](image/image2.png)
