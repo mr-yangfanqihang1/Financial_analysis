@@ -1,9 +1,9 @@
 ```markdown
 # 🚀 电商智能风控与推荐系统
-![alt text](/实验报告及PPT/image.png)
-![alt text](/实验报告及PPT/image1.png)
-![alt text](/实验报告及PPT/image2.png)
-![alt text](/实验报告及PPT/image3.png)
+![alt text](./实验报告及PPT/image.png)
+![alt text](./实验报告及PPT/image1.png)
+![alt text](./实验报告及PPT/image2.png)
+![alt text](./实验报告及PPT/image3.png)
 ## 🌟 项目背景
 随着电商与金融服务的快速发展，平台面临三大核心挑战：
 1. **欺诈交易**威胁资金安全与商家信誉
