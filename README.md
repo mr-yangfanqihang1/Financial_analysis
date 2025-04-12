@@ -38,6 +38,7 @@
 - kafka3.3.1
 
 ![alt text](image/集群规划.png)
+![架构](https://github.com/user-attachments/assets/70b0126e-22de-4b28-9c84-ee66187de9ad)
 
 # 三、项目数据及来源
 
